@@ -49,12 +49,12 @@ require("lazy").setup({
     { import = "lazyvim.plugins.extras.linting.eslint" },
     { import = "lazyvim.plugins.extras.lsp.none-ls" },
     { import = "lazyvim.plugins.extras.test.core" },
-    { import = "lazyvim.plugins.extras.ui.alpha" },
-    { import = "lazyvim.plugins.extras.ui.mini-animate" },
-    { import = "lazyvim.plugins.extras.ui.mini-indentscope" },
     { import = "lazyvim.plugins.extras.util.dot" },
-    { import = "lazyvim.plugins.extras.util.gitui" },
-    { import = "lazyvim.plugins.extras.util.rest" },
+    -- { import = "lazyvim.plugins.extras.ui.alpha" },
+    -- { import = "lazyvim.plugins.extras.ui.mini-animate" },
+    -- { import = "lazyvim.plugins.extras.ui.mini-indentscope" },
+    -- { import = "lazyvim.plugins.extras.util.gitui" },
+    -- { import = "lazyvim.plugins.extras.util.rest" },
     -- </custom>
 
     -- import/override with your plugins

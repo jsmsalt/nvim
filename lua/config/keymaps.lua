@@ -142,7 +142,7 @@ map("n", "<leader>gB", LazyVim.lazygit.browse, { desc = "Git Browse" })
 map("n", "<leader>gf", function()
   local git_path = vim.api.nvim_buf_get_name(0)
   LazyVim.lazygit({args = { "-f", vim.trim(git_path) }})
-end, { desc = "Lazygit Current File History" })
+end, { desc = "File History" })
 
 map("n", "<leader>gl", function()
   LazyVim.lazygit({ args = { "log" }, cwd = LazyVim.root.git() })
@@ -203,6 +203,31 @@ vim.keymap.del('n', '<leader><tab><tab>')
 vim.keymap.del('n', '<leader><tab>]')
 vim.keymap.del('n', '<leader><tab>d')
 vim.keymap.del('n', '<leader><tab>[')
+vim.keymap.del('n', '<leader>wm')
+vim.keymap.del('n', '<leader>-')
+vim.keymap.del('n', '<leader>|')
+vim.keymap.del('n', '<leader>L')
+vim.keymap.del('n', '<leader>D')
+vim.keymap.del('n', '<leader>K')
+vim.keymap.del("n", "<leader>`")
+vim.keymap.del("n", "<leader>gB")
+vim.keymap.del("n", "<leader>gG")
+vim.keymap.del("n", "<leader>gL")
+vim.keymap.del("n", "<leader>ge")
+
+
+
+
+
+
+local neogit = require('neogit')
+
+map("n", "<leader>gn", "Neogit")
+map("n", "<leader>gnn", neogit.open, { desc = "Neogit Open", silent = true, noremap = true})
+map("n", "<leader>gnc", ":Neogit commit<CR>", { desc = "Neogit Commit", silent = true, noremap = true})
+map("n", "<leader>gnp", ":Neogit pull<CR>", { desc = "Neogit Pull", silent = true, noremap = true})
+map("n", "<leader>gnP", ":Neogit push<CR>", { desc = "Neogit Push", silent = true, noremap = true})
+map("n", "<leader>gb", ":Telescope git_branches<CR>", { desc = "Branches", silent = true, noremap = true})
+map("n", "<leader>gnb", ":G blame<CR>", { desc = "Blame", silent = true, noremap = true})
 
 -- </custom>
-
