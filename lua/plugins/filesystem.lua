@@ -1,40 +1,40 @@
 return {
-  {
-    -- Neotree filesystem
-    'nvim-neo-tree/neo-tree.nvim',
-    enabled = false,
-    version = '*',
-    dependencies = {
-      'nvim-lua/plenary.nvim',
-      'nvim-tree/nvim-web-devicons', -- not strictly required, but recommended
-      'MunifTanjim/nui.nvim',
-    },
-    cmd = 'Neotree',
-    keys = {
-      { '<leader>e', ':Neotree reveal<CR>', desc = 'Open [E]xplorer', silent = true },
-    },
-    opts = {
-      buffers = {
-        follow_current_file = {
-          enabled = false, -- This will find and focus the file in the active buffer every time
-          --              -- the current file is changed while the tree is open.
-          leave_dirs_open = false, -- `false` closes auto expanded dirs, such as with `:Neotree reveal`
-        },
-      },
-      filesystem = {
-        follow_current_file = {
-          enabled = false, -- This will find and focus the file in the active buffer every time
-          --              -- the current file is changed while the tree is open.
-          leave_dirs_open = false, -- `false` closes auto expanded dirs, such as with `:Neotree reveal`
-        },
-        window = {
-          mappings = {
-            ['<leader>e'] = 'close_window',
-          },
-        },
-      },
-    },
-  },
+  -- {
+  --   -- Neotree filesystem
+  --   'nvim-neo-tree/neo-tree.nvim',
+  --   enabled = false,
+  --   version = '*',
+  --   dependencies = {
+  --     'nvim-lua/plenary.nvim',
+  --     'nvim-tree/nvim-web-devicons', -- not strictly required, but recommended
+  --     'MunifTanjim/nui.nvim',
+  --   },
+  --   cmd = 'Neotree',
+  --   keys = {
+  --     { '<leader>e', ':Neotree reveal<CR>', desc = 'Open [E]xplorer', silent = true },
+  --   },
+  --   opts = {
+  --     buffers = {
+  --       follow_current_file = {
+  --         enabled = false, -- This will find and focus the file in the active buffer every time
+  --         --              -- the current file is changed while the tree is open.
+  --         leave_dirs_open = false, -- `false` closes auto expanded dirs, such as with `:Neotree reveal`
+  --       },
+  --     },
+  --     filesystem = {
+  --       follow_current_file = {
+  --         enabled = false, -- This will find and focus the file in the active buffer every time
+  --         --              -- the current file is changed while the tree is open.
+  --         leave_dirs_open = false, -- `false` closes auto expanded dirs, such as with `:Neotree reveal`
+  --       },
+  --       window = {
+  --         mappings = {
+  --           ['<leader>e'] = 'close_window',
+  --         },
+  --       },
+  --     },
+  --   },
+  -- },
   {
     -- Oil filesystem
     'stevearc/oil.nvim',
@@ -51,7 +51,7 @@ return {
         columns = { 'icon' },
         keymaps = {
           ['<C-h>'] = false,
-          ['<C-l>'] = false,
+          ['<C-l>'] = 'actions.refresh',
           ['<C-k>'] = false,
           ['<C-j>'] = false,
           ['<M-h>'] = 'actions.select_split',
