@@ -1,30 +1,33 @@
+local toggle_key = "<C-i>"
 return {
-  "greggh/claude-code.nvim",
-  dependencies = {
-    "nvim-lua/plenary.nvim", -- Required for git operations
-  },
-  config = function()
-    require("claude-code").setup({
-      window = {
-        split_ratio = 0.5, -- Percentage of screen for the terminal window (height for horizontal, width for vertical splits)
-        position = "vertical", -- Position of the window: "botright", "topleft", "vertical", "rightbelow vsplit", etc.
-        enter_insert = true, -- Whether to enter insert mode when opening Claude Code
-        hide_numbers = true, -- Hide line numbers in the terminal window
-        hide_signcolumn = true, -- Hide the sign column in the terminal window
-      },
-      -- Keymaps
-      keymaps = {
-        toggle = {
-          normal = "<leader>ac", -- Normal mode keymap for toggling Claude Code, false to disable
-          terminal = "<leader>ac", -- Terminal mode keymap for toggling Claude Code, false to disable
-          variants = {
-            continue = "<leader>aC", -- Normal mode keymap for Claude Code with continue flag
-            verbose = "<leader>aV", -- Normal mode keymap for Claude Code with verbose flag
+  {
+    "coder/claudecode.nvim",
+    dependencies = { "folke/snacks.nvim" },
+    keys = {
+      { toggle_key, "<cmd>ClaudeCodeFocus<cr>", desc = "Claude Code", mode = { "n", "x" } },
+    },
+    opts = {
+      terminal = {
+        ---@module "snacks"
+        ---@type snacks.win.Config|{}
+        snacks_win_opts = {
+          position = "float",
+          width = 0.75,
+          height = 0.75,
+          border = "single",
+          backdrop = 80,
+          keys = {
+            claude_hide = {
+              toggle_key,
+              function(self)
+                self:hide()
+              end,
+              mode = "t",
+              desc = "Hide",
+            },
           },
         },
-        window_navigation = true, -- Enable window navigation keymaps (<C-h/j/k/l>)
-        scrolling = true, -- Enable scrolling keymaps (<C-f/b>) for page up/down
       },
-    })
-  end,
+    },
+  },
 }

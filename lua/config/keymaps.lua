@@ -3,8 +3,8 @@
 -- Add any additional keymaps here
 
 vim.keymap.del("n", "<leader>gs")
-vim.keymap.del("n", "<leader>gL")
-vim.keymap.del("n", "<leader>gG")
+-- vim.keymap.del("n", "<leader>gL")
+-- vim.keymap.del("n", "<leader>gG")
 vim.keymap.del("n", "<leader>gY")
 vim.keymap.del("n", "<leader>l")
 vim.keymap.del("n", "<leader>L")
@@ -12,6 +12,7 @@ vim.keymap.del("n", "<leader>K")
 vim.keymap.del("n", "<leader>E")
 vim.keymap.del("n", "<leader>`")
 vim.keymap.del("n", "<leader>D")
+
 -- vim.keymap.del("n", "<leader>gc")
 -- vim.keymap.del("n", "<leader>K")
 -- vim.keymap.del("n", "<leader>L")
